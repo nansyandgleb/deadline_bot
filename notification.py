@@ -3,8 +3,9 @@ import datetime
 import json
 import vk_api
 from vk_api.utils import get_random_id
-vk = vk_api.VkApi(
-        token='3bf2b5ede024bad5fff48b06904b877a50229c6fa7520d260054bcd421957e0527f3531a60bb1105f6889').get_api()
+with open('api_vk.txt', 'r') as API_KEYS:
+        TOKEN = API_KEYS.readline()
+vk = vk_api.VkApi(token=TOKEN).get_api()
 
 def mainLoop():
     """
